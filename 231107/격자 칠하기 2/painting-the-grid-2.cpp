@@ -36,9 +36,9 @@ bool available(vector<vector<int>> &mat, int mid) {
   int n = mat.size();
   int colored = 0;
 
+  vector<vector<bool>> visited(n, vector<bool>(n));
   for (int i = 0; i < n; ++i) {
     for (int j = 0; j < n; ++j) {
-      vector<vector<bool>> visited(n, vector<bool>(n));
       int area = 0;
       color(mat, visited, area, i, j, mid);
       colored = max(colored, area);
