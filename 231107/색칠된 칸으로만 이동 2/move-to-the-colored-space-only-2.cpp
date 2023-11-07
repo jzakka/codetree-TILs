@@ -29,19 +29,23 @@ void move(vector<vector<int>> &mat, vector<vector<int>> &visited, int x, int y, 
   }
 }
 
+void innerLoop(int n, int m, vector<vector<int>> &visited, vector<vector<int>> &mat, vector<vector<int>> &color, int diff){
+  for (int i = 0; i < n; ++i) {
+    for (int j = 0; j < m; ++j) {
+      if (color.at(i).at(j) == 1) {
+        move(mat, visited, i, j, diff);
+        return;
+      }
+    }
+  }
+}
+
 bool available(vector<vector<int>> &mat, vector<vector<int>> &color, int diff){
   int n = mat.size();
   int m = mat.at(0).size();
   vector<vector<int>> visited(n, vector<int>(m, 0));
 
-  for (int i = 0; i < n; ++i) {
-    for (int j = 0; j < m; ++j) {
-      if (color.at(i).at(j) == 1) {
-        move(mat, visited, i, j, diff);
-        break;
-      }
-    }
-  }
+  innerLoop(n, m, visited, mat, color, diff);
 
   for (int i = 0; i < n; ++i) {
     for (int j = 0; j < m; ++j) {
@@ -54,7 +58,7 @@ bool available(vector<vector<int>> &mat, vector<vector<int>> &color, int diff){
 }
 
 void solution(vector<vector<int>> &mat, vector<vector<int>> &color) {
-  int lo = 0;
+  int lo = 1;
   int hi = 1'000'000'000;
 
   int ans = hi + 1;
@@ -95,3 +99,13 @@ int main() {
 
   solution(matrix, color);
 }
+
+/*
+3 3
+2 10 8
+4 5 11
+20 1 2
+1 0 0
+0 1 0
+0 0 1
+ */
