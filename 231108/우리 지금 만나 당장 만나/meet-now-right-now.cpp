@@ -10,18 +10,15 @@
 using namespace std;
 
 bool check(vector<pair<ll, ll>> info, ll time){
-  ll centre = info.front().first + info.front().second * time;
+  ll s = INT64_MIN;
+  ll e = INT64_MAX;
 
-  for (const auto &posAndVelo: info){
-    ll pos = posAndVelo.first;
-    ll velocity = posAndVelo.second;
-
-    if (abs(centre - pos) > velocity * time) {
-      return false;
-    }
+  for (const auto &i: info){
+    s = max(s, i.first - time * i.second);
+    e = min(e, i.first + time * i.second);
   }
 
-  return true;
+  return s <= e;
 }
 
 void solution(vector<ll> &pos, vector<ll> &velocity){
