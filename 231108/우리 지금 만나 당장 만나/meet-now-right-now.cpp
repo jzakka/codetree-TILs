@@ -40,7 +40,7 @@ void solution(vector<ll> &pos, vector<ll> &velocity){
 
     if (check(info, mid)) {
       hi = mid - 1;
-      ans = min(ans, mid);
+      ans = max(0.0, min(ans, mid));
     } else {
       lo = mid + 1;
     }
