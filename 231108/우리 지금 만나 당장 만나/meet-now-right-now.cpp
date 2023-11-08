@@ -3,15 +3,14 @@
 #include <algorithm>
 #include <cmath>
 #include <queue>
-#include <iomanip>
-
+#include <limits>
 #define ll long long
 
 using namespace std;
 
-bool check(vector<pair<ll, ll>> info, ll time){
-  ll s = INT64_MIN;
-  ll e = INT64_MAX;
+bool check(vector<pair<ll, ll>> info, double time){
+  double s = numeric_limits<double>::min();
+  double e = numeric_limits<double>::max();
 
   for (const auto &i: info){
     s = max(s, i.first - time * i.second);
@@ -24,22 +23,22 @@ bool check(vector<pair<ll, ll>> info, ll time){
 void solution(vector<ll> &pos, vector<ll> &velocity){
   vector<pair<ll, ll>> info(pos.size());
   for (int i = 0; i < info.size(); ++i) {
-    info.at(i).first = pos.at(i) * 10'000;
+    info.at(i).first = pos.at(i);
     info.at(i).second = velocity.at(i);
   }
   std::sort(info.begin(), info.end(), [](pair<ll,ll>& i1, pair<ll,ll>& i2){
     return i1.first < i2.first;
   });
 
-  ll dist = info.back().first - info.front().first;
+  double lo = 0;
+  double hi = 1'000'000'000;
 
-  ll lo = 0; // 0.0001
-  ll hi = dist / info.front().second;
+  double ans = numeric_limits<double>::max();
 
-  ll ans = hi + 1;
-  while (lo <= hi) {
-    ll mid = lo + (hi - lo) / 2;
-    if(check(info, mid)) {
+  for (int i = 0; i < 100; ++i) {
+    double mid = (lo + hi) / 2;
+
+    if (check(info, mid)) {
       hi = mid - 1;
       ans = min(ans, mid);
     } else {
@@ -47,15 +46,11 @@ void solution(vector<ll> &pos, vector<ll> &velocity){
     }
   }
 
-  cout << ans / 10'000 << "." << setw(4) << setfill('0') << ans % 10'000;
+  cout << fixed;
+  cout.precision(4);
+
+  cout << ans;
 }
-
-/*
-2
-1 1000000000
-1000000000 1000000000
-
- */
 
 int main() {
   ios_base::sync_with_stdio(false);
