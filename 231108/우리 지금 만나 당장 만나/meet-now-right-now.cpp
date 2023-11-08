@@ -36,7 +36,7 @@ void solution(vector<ll> &pos, vector<ll> &velocity){
 
   int dist = info.back().first - info.front().first;
 
-  ll lo = 1; // 0.0001
+  ll lo = 0; // 0.0001
   ll hi = dist / info.front().second;
 
   ll ans = hi + 1;
