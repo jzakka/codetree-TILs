@@ -31,7 +31,7 @@ void solution(vector<ll> &pos, vector<ll> &velocity){
     return i1.first < i2.first;
   });
 
-  int dist = info.back().first - info.front().first;
+  ll dist = info.back().first - info.front().first;
 
   ll lo = 0; // 0.0001
   ll hi = dist / info.front().second;
@@ -49,6 +49,13 @@ void solution(vector<ll> &pos, vector<ll> &velocity){
 
   cout << ans / 10'000 << "." << setw(4) << setfill('0') << ans % 10'000;
 }
+
+/*
+2
+1 1000000000
+1000000000 1000000000
+
+ */
 
 int main() {
   ios_base::sync_with_stdio(false);
