@@ -11,33 +11,46 @@
 
 using namespace std;
 
-vector<int> dx = {-1, 0, 0, 1};
-vector<int> dy = {0, -1, 1, 0};
+vector<int> dx = {0, 1, -1, 0};
+vector<int> dy = {1, 0, 0, -1};
 
 bool available(int n, int m, int x, int y) {
   return 0 <= x && x < n && 0 <= y && y < m;
 }
 
-bool check(vector<vector<int>> &matrix, int maxDiff, vector<vector<bool>> &visited,
+bool check(vector<vector<int>> &matrix, int maxDiff, vector<vector<int>> &visited,
            int x, int y, int minH, int maxH) {
   if (x == matrix.size() - 1 && y == matrix[0].size() - 1) {
     return true;
   }
 
-  visited[x][y] = true;
+  visited[x][y] = maxH - minH;
 
   for (int i = 0; i < 4; ++i) {
     int nx = x + dx[i];
     int ny = y + dy[i];
 
-    if (available(matrix.size(), matrix[0].size(), nx, ny) && !visited[nx][ny]
-        && abs(max(maxH, matrix[nx][ny]) - min(minH, matrix[nx][ny])) <= maxDiff
+    if (available(matrix.size(), matrix[0].size(), nx, ny)
+        && max(maxH, matrix[nx][ny]) - min(minH, matrix[nx][ny]) < min(visited[nx][ny], maxDiff + 1)
         && check(matrix, maxDiff, visited, nx, ny, min(minH, matrix[nx][ny]), max(maxH, matrix[nx][ny]))) {
       return true;
     }
   }
 
   return false;
+}
+
+void debug(vector<vector<int>> &matrix, vector<vector<bool>> &visited){
+  int n = matrix.size();
+  int m = matrix[0].size();
+
+  for (int i = 0; i < n; ++i) {
+    for (int j = 0; j < m; ++j) {
+      cout.width(7);
+      cout << matrix[i][j] << ":" << visited[i][j] << " ";
+    }
+    cout << "\n";
+  }
 }
 
 void solution(vector<vector<int>> &matrix) {
@@ -50,7 +63,7 @@ void solution(vector<vector<int>> &matrix) {
   while (lo <= hi) {
     int mid = (lo + hi) / 2;
 
-    vector<vector<bool>> visited(n, vector<bool>(m));
+    vector<vector<int>> visited(n, vector<int>(m, INT32_MAX));
     if (check(matrix, mid, visited, 0, 0, matrix[0][0], matrix[0][0])) {
       hi = mid - 1;
       ans = min(ans, mid);
