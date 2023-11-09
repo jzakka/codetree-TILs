@@ -4,16 +4,17 @@
 23년 11월 08일 목표(240px)를 달성했어요🥳.
 
 ![340xp](https://img.shields.io/badge/EXP-340xp-%235cb85c.svg?for-the-badge)
-![2일째](https://img.shields.io/badge/연속학습-2일째-%23E34F26.svg?for-the-badge)
+![3일째](https://img.shields.io/badge/연속학습-3일째-%23E34F26.svg?for-the-badge)
 
 |총 문제수|획득 경험치|연속 학습|
 |---:|---:|---|
-2|340xp|2일째🔥|
+3|340xp|3일째🔥|
 
 |교재|이름|난이도|상태|최근 제출 코드|
 |---|---|:---:|:---:|---|
 |[Intermediate Mid / Parametric Search / Parametric Search](https://www.codetree.ai/missions?missionId=8)|[[연습]폭탄 떨구기](https://www.codetree.ai/missions/8/problems/drop-the-bomb)|![보통][medium]|![Passed][passed]|[링크](https://github.com/jzakka/codetree-TILs/blob/main/231108/%ED%8F%AD%ED%83%84%20%EB%96%A8%EA%B5%AC%EA%B8%B0/drop-the-bomb.cpp)|
 |[Intermediate Mid / Parametric Search / Parametric Search](https://www.codetree.ai/missions?missionId=8)|[[연습]버스를 기다리며](https://www.codetree.ai/missions/8/problems/waiting-for-the-bus)|![보통][medium]|![Passed][passed]|[링크](https://github.com/jzakka/codetree-TILs/blob/main/231108/%EB%B2%84%EC%8A%A4%EB%A5%BC%20%EA%B8%B0%EB%8B%A4%EB%A6%AC%EB%A9%B0/waiting-for-the-bus.cpp)|
+|[Intermediate Mid / Parametric Search / Parametric Search](https://www.codetree.ai/missions?missionId=8)|[[연습]우리 지금 만나 당장 만나](https://www.codetree.ai/missions/8/problems/meet-now-right-now)|![보통][medium]|![Passed][passed]|[링크](https://github.com/jzakka/codetree-TILs/blob/main/231108/%EC%9A%B0%EB%A6%AC%20%EC%A7%80%EA%B8%88%20%EB%A7%8C%EB%82%98%20%EB%8B%B9%EC%9E%A5%20%EB%A7%8C%EB%82%98/meet-now-right-now.cpp)|
 
 
 * 획득 경험치: 해설을 보지 않고 푼 문제에 한해 최초 1회 경험치를 획득하실 수 있습니다.
