@@ -11,13 +11,13 @@
 
 using namespace std;
 
-bool check(vector<int> &c, int k, int l, int h){
+bool check(vector<int> &c, long k, long l, long h){
   int i = 0;
   while (i < h && c.at(i) >= h) {
     i++;
   }
 
-  int remainPosts = k * l;
+  long remainPosts = k * l;
   for (;i < h; ++i) {
     int ci = c.at(i);
 
@@ -59,12 +59,16 @@ int main() {
   cin.tie(NULL);
   cout.tie(NULL);
 
+//  ifstream in_file("/Users/chungsanghwa/Desktop/input(5).txt");
+
   int n, k, l;
   cin >> n >> k >> l;
+//  in_file >> n >> k >> l;
 
   vector<int> c(n);
   for (int i = 0; i < n; ++i) {
     cin >> c.at(i);
+//    in_file >> c.at(i);
   }
 
   solution(k, l, c);
