@@ -6,6 +6,7 @@
 #include <set>
 #include <unordered_set>
 #include <unordered_map>
+#include <stack>
 
 #define ll long long
 #define pdd pair<double,double>
@@ -15,25 +16,24 @@ using namespace std;
 
 void solution(vector<pii>& schedule){
   std::sort(schedule.begin(), schedule.end(),[](pii& s1, pii& s2){
-    if(s1.first == s2.first){
-      return s1.second < s2.second;
+    if(s1.second == s2.second){
+      return s1.first < s2.first;
     }
-    return s1.first < s2.first;
+    return s1.second < s2.second;
   });
 
-  auto compare = [](pii& s1, pii& s2){
-    return s1.second < s2.second;
-  };
-  priority_queue<pii , vector<pii>, decltype(compare)> pq(compare);
+  pii top = schedule.front();
+  int ans = 1;
 
-  for (const auto &sch: schedule){
-    while (!pq.empty() && pq.top().second > sch.first) {
-      pq.pop();
+  for (int i = 1; i < schedule.size(); ++i) {
+    auto &sch = schedule.at(i);
+    if (sch.first >= top.second) {
+      top = sch;
+      ans++;
     }
-    pq.push(sch);
   }
 
-  cout << pq.size();
+  cout << ans;
 }
 
 int main() {
