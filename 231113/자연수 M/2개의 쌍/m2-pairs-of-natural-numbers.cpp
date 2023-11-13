@@ -19,14 +19,14 @@ void solution(map<int,int>& counts){
   auto s = counts.begin();
   auto e = prev(counts.end());
 
-  int ans = INT32_MAX;
+  int ans = INT32_MIN;
   while (s->first <= e->first) {
     if (s->first == e->first) {
       ans = min(ans, 2 * s->first);
       s++;
       e--;
     } else {
-      ans = min(ans, s->first + e->first);
+      ans = max(ans, s->first + e->first);
 
       if (s->second < e->second) {
         e->second -= s->second;
