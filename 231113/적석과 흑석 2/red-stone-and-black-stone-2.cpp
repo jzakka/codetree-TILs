@@ -18,21 +18,20 @@ using namespace std;
 void solution(int c, int n, vector<int> &red, vector<pii > &black){
   std::sort(red.begin(), red.end());
   std::sort(black.begin(), black.end(), [](pii& a, pii& b){
-    if (a.first == b.first) {
-      return a.second < b.second;
+    if (a.second == b.second) {
+      return a.first < b.first;
     }
     return a.second < b.second;
   });
 
+  multiset<int> reds;
+  reds.insert(red.begin(), red.end());
   int ans = 0;
-  auto r = red.begin();
   for (const auto &b: black){
-    while (r != red.end() && *r < b.first) {
-      r++;
-    }
-    if (r != red.end() && b.first <= *r && *r <= b.second) {
+    auto redIt = reds.lower_bound(b.first);
+    if (redIt != reds.end() && *redIt <= b.second) {
       ans++;
-      r++;
+      reds.erase(redIt);
     }
   }
 
@@ -59,3 +58,21 @@ int main() {
 
   solution(c, n, red, black);
 }
+
+/*
+6 8
+13
+28
+43
+2
+0
+21
+0 21
+1 20
+12 14
+14 33
+22 38
+0 11
+12 19
+0 31
+ */
