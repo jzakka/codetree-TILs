@@ -22,9 +22,8 @@ void solution(map<int,int>& counts){
   int ans = INT32_MIN;
   while (s->first <= e->first) {
     if (s->first == e->first) {
-      ans = min(ans, 2 * s->first);
-      s++;
-      e--;
+      ans = max(ans, 2 * s->first);
+      break;
     } else {
       ans = max(ans, s->first + e->first);
 
