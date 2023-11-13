@@ -21,13 +21,15 @@ struct compare {
   }
 };
 
-void solution(set < pair<string, double>, compare > &fragments) {
+void solution(multiset< pair<string, double>, compare > &fragments) {
   string T = "";
 
   for (const auto &fragment: fragments){
+//    cout << "#: " << fragment.first << "\n";
     T += fragment.first;
   }
 
+//  cout << T << "\n";
   ll ans = 0;
   ll rBracketCnt = 0;
   for (int i = T.length() - 1; i >= 0; --i) {
@@ -49,7 +51,7 @@ int main() {
   int n;
   cin >> n;
 
-  set < pair<string, double>, compare > T;
+  multiset < pair<string, double>, compare > T;
 
   for (int i = 0; i < n; ++i) {
     pair<string, double> fragment;
