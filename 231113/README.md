@@ -8,10 +8,12 @@
 
 |총 문제수|획득 경험치|연속 학습|
 |---:|---:|---|
-3|320xp|2일째🔥|
+5|320xp|2일째🔥|
 
 |교재|이름|난이도|상태|최근 제출 코드|
 |---|---|:---:|:---:|---|
+|[Intermediate Mid / Greedy / Greedy Algorithm](https://www.codetree.ai/missions?missionId=8)|[[연습]높은 숫자의 카드가 이기는 게임](https://www.codetree.ai/missions/8/problems/a-high-number-of-cards-wins)|![쉬움][easy]|![Passed][passed]|[링크](https://github.com/jzakka/codetree-TILs/blob/main/231113/%EB%86%92%EC%9D%80%20%EC%88%AB%EC%9E%90%EC%9D%98%20%EC%B9%B4%EB%93%9C%EA%B0%80%20%EC%9D%B4%EA%B8%B0%EB%8A%94%20%EA%B2%8C%EC%9E%84/a-high-number-of-cards-wins.cpp)|
+|[Intermediate Mid / Greedy / Greedy Algorithm](https://www.codetree.ai/missions?missionId=8)|[[연습]폭탄 해체 작업](https://www.codetree.ai/missions/8/problems/the-bomb-dismantling)|![쉬움][easy]|![Passed][passed]|[링크](https://github.com/jzakka/codetree-TILs/blob/main/231113/%ED%8F%AD%ED%83%84%20%ED%95%B4%EC%B2%B4%20%EC%9E%91%EC%97%85/the-bomb-dismantling.cpp)|
 |[Intermediate Mid / Greedy / Greedy Algorithm](https://www.codetree.ai/missions?missionId=8)|[[연습]자연수 M/2개의 쌍](https://www.codetree.ai/missions/8/problems/m2-pairs-of-natural-numbers)|![보통][medium]|![Passed][passed]|[링크](https://github.com/jzakka/codetree-TILs/blob/main/231113/%EC%9E%90%EC%97%B0%EC%88%98%20M/2%EA%B0%9C%EC%9D%98%20%EC%8C%8D/m2-pairs-of-natural-numbers.cpp)|
 |[Intermediate Mid / Greedy / Greedy Algorithm](https://www.codetree.ai/missions?missionId=8)|[[연습]적석과 흑석 2](https://www.codetree.ai/missions/8/problems/red-stone-and-black-stone-2)|![보통][medium]|![Passed][passed]|[링크](https://github.com/jzakka/codetree-TILs/blob/main/231113/%EC%A0%81%EC%84%9D%EA%B3%BC%20%ED%9D%91%EC%84%9D%202/red-stone-and-black-stone-2.cpp)|
 |[Intermediate Mid / Greedy / Greedy Algorithm](https://www.codetree.ai/missions?missionId=8)|[[연습]소괄호 매칭 수 최대화하기](https://www.codetree.ai/missions/8/problems/maximize-the-number-of-parenthesis-matches)|![어려움][hard]|![Passed][passed]|[링크](https://github.com/jzakka/codetree-TILs/blob/main/231113/%EC%86%8C%EA%B4%84%ED%98%B8%20%EB%A7%A4%EC%B9%AD%20%EC%88%98%20%EC%B5%9C%EB%8C%80%ED%99%94%ED%95%98%EA%B8%B0/maximize-the-number-of-parenthesis-matches.cpp)|
